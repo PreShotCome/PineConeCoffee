@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com data:; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>The Pinecone Coffee</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 <style>
@@ -548,15 +551,34 @@ function showCat(k,btn){
   render(k);
 }
 function render(k){
-  document.getElementById('mgrid').innerHTML=menu[k].map(i=>`
-    <div class="mitem">
-      ${i.badge?`<div class="ibadge">${i.badge}</div>`:''}
-      <div class="mitem-top">
-        <span class="iname">${i.n}</span>
-        <span class="iprice">${i.p}</span>
-      </div>
-      <p class="idesc">${i.d}</p>
-    </div>`).join('');
+  const grid=document.getElementById('mgrid');
+  grid.textContent='';
+  menu[k].forEach(i=>{
+    const card=document.createElement('div');
+    card.className='mitem';
+    if(i.badge){
+      const b=document.createElement('div');
+      b.className='ibadge';
+      b.textContent=i.badge;
+      card.appendChild(b);
+    }
+    const top=document.createElement('div');
+    top.className='mitem-top';
+    const name=document.createElement('span');
+    name.className='iname';
+    name.textContent=i.n;
+    const price=document.createElement('span');
+    price.className='iprice';
+    price.textContent=i.p;
+    top.appendChild(name);
+    top.appendChild(price);
+    const desc=document.createElement('p');
+    desc.className='idesc';
+    desc.textContent=i.d;
+    card.appendChild(top);
+    card.appendChild(desc);
+    grid.appendChild(card);
+  });
 }
 render('espresso');
 </script>
