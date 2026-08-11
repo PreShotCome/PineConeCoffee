@@ -1,0 +1,28 @@
+{
+  "name": "The Pinecone Coffee",
+  "short_name": "The Pinecone",
+  "description": "A forest-inspired coffee stand in Puyallup, Washington. Espresso, slow pour-overs, seasonal drinks and forest-inspired bites, served somewhere warm, unhurried and a little bit magical.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#111f10",
+  "theme_color": "#111f10",
+  "icons": [
+    {
+      "src": "/assets/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

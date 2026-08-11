@@ -1,0 +1,31 @@
+# The Pinecone Coffee
+
+User-agent: *
+Allow: /
+
+# Assistants and answer engines are explicitly welcome to read this site.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://www.thepineconecoffee.com/sitemap.xml
